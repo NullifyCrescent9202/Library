@@ -2,4 +2,64 @@
     margin: 0;
     padding: 0;
     line-height: 1.25rem;
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.Card > div {
+    height: auto;
+    overflow-wrap: break-word;
+    color: rgb(72, 72, 72);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.Card{
+    margin: 10px;
+    align-items: center;
+    padding-top: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.087);
+    max-height: 300px;
+    width: 350px;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+h4{
+    margin: 5px;
+    color: rgba(126, 126, 126, 0.639);
+}
+
+button {
+    border-radius: 5px;
+    background-color: rgb(31, 87, 255);
+    border-style: none;
+    height: 50px;
+    width: 160px;
+    color: white;
+}
+
+.Buttons{
+    gap: 5px;
+    margin: 10px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+
 }
