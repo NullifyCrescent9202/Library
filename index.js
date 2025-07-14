@@ -1,4 +1,7 @@
-const userLibrary = [];
+const userLibrary = [
+    new Book("Dune", "Frank Herbet", false, 658, 1),
+    new Book("The Three Body Problem","Cixin Liu", false, 472, 20),
+];
 
 function Book(title, author, readStatus, Pages, userId){
     this.title = title;
@@ -8,6 +11,18 @@ function Book(title, author, readStatus, Pages, userId){
     this.userId = userId;
 };
 
+function populateDisplay(lib){
+    lib.forEach(element => {
+        title = element.title;
+        author = element.author;
+        read = element.readStatus;
+        page = element.Pages;
+        id = element.userId;
+        createBookElement(title, author, page, read, id);
+    });
+};
+
+populateDisplay(userLibrary);
 function createBook(title, author, Pages, readStatus){
     let uuid = crypto.randomUUID();
     book = new Book(title, author, readStatus, Pages, uuid);
