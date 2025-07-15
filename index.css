@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-body {
+.con {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -62,4 +62,8 @@ button {
     justify-items: center;
     grid-template-columns: 1fr 1fr;
 
+}
+
+header{
+    border: 2px solid red;
 }

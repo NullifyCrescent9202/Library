@@ -31,12 +31,12 @@ function createBook(title, author, Pages, readStatus){
 
 
 function createBookElement(title, author, Pages, readStatus, UUID){
-    const body = document.querySelector("body");
+    const con = document.querySelector(".con");
     const card = document.createElement("div");
 
     card.className = "Card";
     card.id = UUID;
-    body.appendChild(card);
+    con.appendChild(card);
 
     const titleHeader = document.createElement("h4");
     titleHeader.innerText = "Title";
