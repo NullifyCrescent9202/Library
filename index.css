@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+html, body{
+    overscroll-behavior: none;
+}
+
 .con {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -65,5 +69,9 @@ button {
 }
 
 header{
-    border: 2px solid red;
+    background-color: white;
+    height: 3.8em;
+    border-bottom: 1px solid rgba(213, 213, 213, 0.447);
+    position: sticky;
+    top: 0.1px;
 }
