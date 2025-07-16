@@ -8,7 +8,26 @@
     <title>Library</title>
 </head>
 <body>
-<header></header>
+<header><button class="openModal">Add Book</button></header>
+<dialog class="modal">
+    <form method="dialog">
+        <label for="title">Title</label>
+        <input class="text" type="text"  id="title" name="Title" required>
+
+        <label for="author-name">Author</label>
+        <input class="text" type="text" id="author-name" name="Author" required>
+
+        <label for="PageAmnt">Pages</label>
+        <input class="text" type="tel" id="PageAmnt" name="Pages">
+
+        <label for="read-book">Read</label>
+        <input class="checkbox" type="checkbox" id="read-book" name="Read">
+
+        <div class="modalbtns">
+
+        </div>
+    </form>
+</dialog>
 <div class="con"></div>
 </body>
 </html>
