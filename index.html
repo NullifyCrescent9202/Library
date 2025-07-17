@@ -10,7 +10,7 @@
 <body>
 <header><button class="openModal">Add Book</button></header>
 <dialog class="modal">
-    <form method="dialog">
+    <form>
         <label for="title">Title</label>
         <input class="text" type="text"  id="title" name="Title" required>
 
@@ -24,7 +24,8 @@
         <input class="checkbox" type="checkbox" id="read-book" name="Read">
 
         <div class="modalbtns">
-
+            <button onclick="modal.close()" type="reset">Cancel</button>
+            <button type="submit" formmethod="dialog">Add Book</button>
         </div>
     </form>
 </dialog>

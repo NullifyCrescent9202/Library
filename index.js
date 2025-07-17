@@ -80,3 +80,11 @@ function createBookElement(title, author, Pages, readStatus, UUID){
     btns.appendChild(deletebtn);
     
 }
+
+const modalbtn = document.querySelector(".openModal");
+
+const modal = document.querySelector(".modal");
+
+modalbtn.addEventListener(("click"), ()=>{
+    modal.showModal();
+});
