@@ -69,16 +69,14 @@ function createBookElement(title, author, Pages, readStatus, UUID){
     btns.className = "Buttons";
     card.appendChild(btns);
 
-    statusbtn = document.createElement("button");
-    statusbtn.append("Not Read");
-    statusbtn.id = "status";
-    btns.appendChild(statusbtn);
-
     deletebtn = document.createElement("button");
     deletebtn.append("Delete");
     deletebtn.id = "delete";
     btns.appendChild(deletebtn);
-    
+
+    statusbtn = document.createElement("button");
+    statusbtn.id = "status";
+    btns.appendChild(statusbtn);
 }
 
 const modalbtn = document.querySelector(".openModal");
