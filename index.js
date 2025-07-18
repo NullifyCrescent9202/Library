@@ -88,3 +88,32 @@ const modal = document.querySelector(".modal");
 modalbtn.addEventListener(("click"), ()=>{
     modal.showModal();
 });
+
+const addbtn = document.querySelector("#addbtn");
+
+ addbtn.addEventListener(("click"), (event) =>{
+   const title = document.getElementById("title").value;
+   const authorName = document.getElementById("author-name").value;
+   const PageAmnt = document.getElementById("PageAmnt").value;
+   const read = document.getElementById("read-book").value;
+   const form = document.querySelector("form");
+
+   let isTitleEmpty;
+   if(title.length > 0){
+    isTitleEmpty = false
+   };
+   
+   let isAuthorEmpty;
+   if(authorName.length > 0){
+    isAuthorEmpty = false;
+   };
+
+   if(isTitleEmpty === false && isAuthorEmpty === false){
+    isAuthorEmpty = false;
+    isTitleEmpty = false;
+    event.preventDefault();
+    modal.close();
+    createBookElement(title, authorName, PageAmnt)
+    form.reset();
+    };
+});
