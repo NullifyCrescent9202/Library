@@ -95,8 +95,14 @@ const addbtn = document.querySelector("#addbtn");
    const title = document.getElementById("title").value;
    const authorName = document.getElementById("author-name").value;
    const PageAmnt = document.getElementById("PageAmnt").value;
-   const read = document.getElementById("read-book").value;
+   const read = document.getElementById("read-book");
    const form = document.querySelector("form");
+   
+   if(read.checked){
+    read.value = true;
+   } else {
+    read.value = false;
+   }
 
    let isTitleEmpty;
    if(title.length > 0){
@@ -111,9 +117,9 @@ const addbtn = document.querySelector("#addbtn");
    if(isTitleEmpty === false && isAuthorEmpty === false){
     isAuthorEmpty = false;
     isTitleEmpty = false;
-    event.preventDefault();
+    alert(read.value);
     modal.close();
-    createBookElement(title, authorName, PageAmnt, read.value, crypto.randomUUID())
+    createBookElement(title, authorName, PageAmnt, read, crypto.randomUUID())
     form.reset();
     };
 });
