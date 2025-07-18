@@ -113,7 +113,7 @@ const addbtn = document.querySelector("#addbtn");
     isTitleEmpty = false;
     event.preventDefault();
     modal.close();
-    createBookElement(title, authorName, PageAmnt)
+    createBookElement(title, authorName, PageAmnt, read.value, crypto.randomUUID())
     form.reset();
     };
 });
