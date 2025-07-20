@@ -1,5 +1,5 @@
 const userLibrary = [
-    new Book("Dune", "Frank Herbet", false, 658, 1),
+    new Book("Dune", "Frank Herbet", true, 658, 1),
     new Book("The Three Body Problem","Cixin Liu", false, 472, 20),
 ];
 
@@ -33,6 +33,7 @@ function createBook(title, author, Pages, readStatus){
 function createBookElement(title, author, Pages, readStatus, UUID){
     const con = document.querySelector(".con");
     const card = document.createElement("div");
+    const hasRead = readStatus;
 
     card.className = "Card";
     card.id = UUID;
@@ -74,9 +75,32 @@ function createBookElement(title, author, Pages, readStatus, UUID){
     deletebtn.id = "delete";
     btns.appendChild(deletebtn);
 
-    statusbtn = document.createElement("button");
+    let val = hasRead;
+    console.log(val);
+
+    const statusbtn = document.createElement("button");
     statusbtn.id = "status";
     btns.appendChild(statusbtn);
+
+
+    if(val === true){
+        statusbtn.className = "read";
+        statusbtn.innerText = "Read"
+        console.log(card.id);
+    } else if(val === false){
+        statusbtn.className = "unRead";
+        statusbtn.innerText = "Unread"
+    };
+    statusbtn.addEventListener(("click"), () =>{
+        if(statusbtn.className === "read"){
+            statusbtn.className = "unRead";
+            statusbtn.innerText = "Unread";
+        } else if(statusbtn.className === "unRead"){
+            statusbtn.className = "read";
+            statusbtn.innerText = "Read";
+        }
+    })
+
 }
 
 const modalbtn = document.querySelector(".openModal");
@@ -95,11 +119,13 @@ const addbtn = document.querySelector("#addbtn");
    const PageAmnt = document.getElementById("PageAmnt").value;
    const read = document.getElementById("read-book");
    const form = document.querySelector("form");
-   
+   let ifRead = null;
    if(read.checked){
     read.value = true;
+    ifRead = true;
    } else {
     read.value = false;
+    ifRead = false;
    }
 
    let isTitleEmpty;
@@ -115,9 +141,9 @@ const addbtn = document.querySelector("#addbtn");
    if(isTitleEmpty === false && isAuthorEmpty === false){
     isAuthorEmpty = false;
     isTitleEmpty = false;
-    alert(read.value);
+    console.log(read.value);
     modal.close();
-    createBookElement(title, authorName, PageAmnt, read, crypto.randomUUID())
+    createBookElement(title, authorName, PageAmnt, ifRead, crypto.randomUUID())
     form.reset();
     };
 });
