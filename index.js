@@ -143,7 +143,9 @@ const addbtn = document.querySelector("#addbtn");
     isTitleEmpty = false;
     console.log(read.value);
     modal.close();
-    createBookElement(title, authorName, PageAmnt, ifRead, crypto.randomUUID())
+    const id = crypto.randomUUID();
+    userLibrary.push(new Book(title, authorName, ifRead, PageAmnt, id));
+    createBookElement(title, authorName, PageAmnt, ifRead, id);
     form.reset();
     };
 });
