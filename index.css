@@ -12,12 +12,12 @@ html, body{
 .con {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 5px;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    padding-left: 60px;
+    padding-right: 60px;
     justify-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .Card > div {
