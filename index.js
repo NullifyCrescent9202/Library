@@ -92,16 +92,28 @@ function createBookElement(title, author, Pages, readStatus, UUID){
         statusbtn.innerText = "Unread"
     };
     statusbtn.addEventListener(("click"), () =>{
+
         if(statusbtn.className === "read"){
             statusbtn.className = "unRead";
             statusbtn.innerText = "Unread";
+            userLibrary.forEach((ele) =>{
+                if(ele.userId == card.id){
+                    ele.readStatus = false;
+                };
+            });
+
         } else if(statusbtn.className === "unRead"){
             statusbtn.className = "read";
             statusbtn.innerText = "Read";
-        }
-    })
+            userLibrary.forEach((ele) =>{
+                if(ele.userId == card.id)
+                    ele.readStatus = true
+            });
+        };
+    });
+};
 
-}
+
 
 const modalbtn = document.querySelector(".openModal");
 
