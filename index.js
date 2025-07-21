@@ -70,7 +70,7 @@ function createBookElement(title, author, Pages, readStatus, UUID){
     btns.className = "Buttons";
     card.appendChild(btns);
 
-    deletebtn = document.createElement("button");
+   const deletebtn = document.createElement("button");
     deletebtn.append("Delete");
     deletebtn.id = "delete";
     btns.appendChild(deletebtn);
@@ -91,6 +91,24 @@ function createBookElement(title, author, Pages, readStatus, UUID){
         statusbtn.className = "unRead";
         statusbtn.innerText = "Unread"
     };
+
+    deletebtn.addEventListener(("click"), () =>{
+        userLibrary.forEach((ele) =>{
+            if(ele.userId == card.id){
+                deleteBook(ele);
+                card.remove();
+            }
+        })
+    })
+    function deleteBook(element){
+        for(let i = userLibrary.length -1; i >= 0; i--){
+            if(userLibrary[i] === element){
+                userLibrary.splice(i, 1);
+            };
+        };
+
+    };
+
     statusbtn.addEventListener(("click"), () =>{
 
         if(statusbtn.className === "read"){
