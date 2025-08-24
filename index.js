@@ -1,15 +1,17 @@
+class Book{
+    constructor(title, author, readStatus, Pages, userId){
+        this.title = title;
+        this.author = author;
+        this.readStatus = readStatus;
+        this.Pages = Pages;
+        this.userId = userId;
+    };
+};
+
 const userLibrary = [
     new Book("Dune", "Frank Herbet", true, 658, 1),
     new Book("The Three Body Problem","Cixin Liu", false, 472, 20),
 ];
-
-function Book(title, author, readStatus, Pages, userId){
-    this.title = title;
-    this.author = author;
-    this.readStatus = readStatus;
-    this.Pages = Pages;
-    this.userId = userId;
-};
 
 function populateDisplay(lib){
     lib.forEach(element => {
